@@ -9,7 +9,47 @@
 </head>
 
 <body>
+    <input type="text" name="nome">
+    <button onClick="adicionar()">Adicionar</button>
 
+    <ul>
+
+    </ul>
+
+
+
+    <script>
+        var ul = document.querySelector('ul')
+        var nomes = ["Diego", "Gabriel", "Lucas"];
+        var inputText = document.querySelector('input[name=nome]')
+        var liElement = document.createElement('li')
+
+        nomes.map((item) => {
+            liElement = document.createElement('li')
+            liElement.appendChild(document.createTextNode(item))
+
+            ul.appendChild(liElement)
+        })
+
+        function adicionar() {
+
+            liElement = document.createElement('li')
+            liElement.appendChild(document.createTextNode(inputText.value))
+
+            ul.appendChild(liElement)
+
+
+            inputText.value = ""
+
+
+
+        }
+
+
+
+
+
+    </script>
 </body>
 
 </html>
