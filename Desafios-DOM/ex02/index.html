@@ -6,10 +6,62 @@
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        #app {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+    </style>
 </head>
 
 <body>
+    <div id="root">
+        <button class="button">Gerar Quadrado</button>
+    </div>
 
+    <div id="app">
+
+    </div>
+
+
+    <script>
+
+        function getRandomColor() {
+            var letters = "0123456789ABCDEF";
+            var color = "#";
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        var btn = document.querySelector('#root .button')
+        var app = document.querySelector('#app')
+
+        const criarQuadrado = () => {
+            var div = document.createElement('div')
+            div.style.width = '100px'
+            div.style.height = '100px'
+            div.style.backgroundColor = '#8B0000'
+            return div
+        }
+
+        btn.addEventListener('click', () => {
+            div = criarQuadrado()
+            div.addEventListener('mouseover', (e) => {
+                var newColor = getRandomColor()
+                e.target.style.background = newColor
+            })
+            app.appendChild(div)
+        })
+
+
+
+
+
+
+    </script>
 </body>
 
 </html>
