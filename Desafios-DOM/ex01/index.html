@@ -1,15 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        #app {
+            display: flex;
+            gap: 2px;
+        }
+    </style>
 </head>
 
 <body>
+    <div id="root">
+        <button class="button">Gerar Quadrado</button>
+    </div>
 
+    <div id="app">
+
+    </div>
+
+
+    <script>
+        var btn = document.querySelector('#root .button')
+        var app = document.querySelector('#app')
+
+        const criarQuadrado = () => {
+            var div = document.createElement('div')
+            div.style.width = '100px'
+            div.style.height = '100px'
+            div.style.backgroundColor = '#8B0000'
+            return div
+        }
+
+        btn.addEventListener('click', () => {
+            div = criarQuadrado()
+            app.appendChild(div)
+        })
+
+
+
+
+
+
+    </script>
 </body>
 
 </html>
