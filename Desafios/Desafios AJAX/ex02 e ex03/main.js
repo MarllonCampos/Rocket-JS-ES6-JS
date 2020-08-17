@@ -1,4 +1,4 @@
-root = document.querySelector("#root")
+oot = document.querySelector("#root")
 nameRepo = document.querySelector('.nameRepo')
 sendButton = document.querySelector('.sendButton')
 app = document.querySelector('#app')
