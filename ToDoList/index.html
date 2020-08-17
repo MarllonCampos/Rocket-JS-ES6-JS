@@ -2,24 +2,46 @@
 <html lang="pt-br">
 
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <meta name="viewport"
-    content="width=device-width, initial-scale=1.0" />
-  <title>RocketJS - JS</title>
+    content="width=device-width, initial-scale=1.0">
+  <title>To-Do Lists</title>
+
+
   <style>
-    #app {
-      width: auto;
-      display: inline-block;
+    a {
+      text-decoration: none;
+      color: rgba(233, 12, 12, 0.78);
+      background: transparent;
+    }
+
+    button {
+      background-color: rgb(233, 12, 12);
+      color: white;
+      font-weight: 600;
+      border: 1px solid rgba(231, 67, 67, 0.9);
+      border-radius: 4px;
+      box-shadow: 0 13px 45px 2px rgba(233, 12, 12, 0.40);
     }
   </style>
 </head>
 
 <body>
   <div id="app">
-    <div class="box"></div>
+    <ul class="ul">
+
+
+    </ul>
+
+    <input type="text" placeholder="Digite um To-Do"
+      class="inputText">
+    <button class="button">Adicionar</button>
+
   </div>
 
-  <script src="./bundle.js"></script>
+
+  <script src="bundle.js"></script>
+
 </body>
 
 </html>

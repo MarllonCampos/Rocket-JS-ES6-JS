@@ -1,7 +1,58 @@
 "use strict";
 
-var boxElement = document.querySelector('.box');
-console.log(boxElement);
-boxElement.style.width = 100;
-boxElement.style.height = 100;
-boxElement.style.backgroundColor = "#111";
+function _createForOfIteratorHelper(o, allowArrayLike) { var it; if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+var listElement = document.querySelector(".ul");
+var inputElement = document.querySelector(".inputText");
+var buttonElement = document.querySelector(".button");
+var todos = JSON.parse(localStorage.getItem('list_todos')) || [];
+
+function renderTodos() {
+  listElement.innerHTML = "";
+
+  var _iterator = _createForOfIteratorHelper(todos),
+      _step;
+
+  try {
+    for (_iterator.s(); !(_step = _iterator.n()).done;) {
+      var todo = _step.value;
+      var todoElement = document.createElement('li');
+      var linkElement = document.createElement('a');
+      var todoText = document.createTextNode(todo);
+      var pos = todos.indexOf(todo);
+      linkElement.setAttribute('onclick', "deleteTodo(".concat(pos, ")"));
+      linkElement.appendChild(document.createTextNode(' - Excluir '));
+      linkElement.setAttribute('href', '#');
+      listElement.appendChild(todoElement);
+      todoElement.appendChild(todoText);
+      todoElement.appendChild(linkElement);
+    }
+  } catch (err) {
+    _iterator.e(err);
+  } finally {
+    _iterator.f();
+  }
+}
+
+renderTodos();
+buttonElement.addEventListener('click', function () {
+  var todoText = inputElement.value;
+  todos.push(todoText);
+  inputElement.value = "";
+  renderTodos();
+  saveToStorage();
+});
+
+function deleteTodo(pos) {
+  todos.splice(pos, 1);
+  saveToStorage();
+  renderTodos();
+}
+
+function saveToStorage() {
+  localStorage.setItem('list_todos', JSON.stringify(todos));
+}
