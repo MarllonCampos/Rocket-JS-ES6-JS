@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            box-sizing: content-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            padding: 1%;
+        }
+
+        input {
+            padding-left: 10px;
+            margin-bottom: 12px;
+        }
+
+        ul {
+            margin-top: 12pxs;
+        }
+
+
+        li::marker {
+            margin-left: 15px;
+        }
+
+        li {
+            padding-top: 4px;
+            margin-left: 36px;
+
+        }
+
+        a {
+            text-decoration: underline;
+            color: rgb(9, 114, 117);
+        }
+    </style>
+    <title>Listar Repos Github</title>
+</head>
+
+<body>
+
+    <div id="root">
+        <section>
+            <input type="text" class="nameRepo">
+            <button type="submit" class="sendButton">Buscar
+                Repos</button>
+        </section>
+        <div id="app">
+        </div>
+    </div>
+
+
+
+
+
+    <script
+        src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
