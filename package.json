@@ -13,6 +13,6 @@
     "@babel/preset-env": "^7.11.0"
   },
   "scripts": {
-    "dev": "babel ./ToDoList/main.js -o ./ToDoList/bundle.js -w "
+    "dev": "babel ./AJAX/main.js -o ./AJAX/bundle.js -w "
   }
 }
