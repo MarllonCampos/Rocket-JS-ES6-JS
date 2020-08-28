@@ -5,39 +5,48 @@
   <meta charset="UTF-8">
   <meta name="viewport"
     content="width=device-width, initial-scale=1.0">
-  <title>To-Do Lists</title>
-
-
+  <title>Aplicação com ES6+</title>
   <style>
-    a {
-      text-decoration: none;
-      color: rgba(233, 12, 12, 0.78);
-      background: transparent;
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
     }
 
-    button {
-      background-color: rgb(233, 12, 12);
-      color: white;
-      font-weight: 600;
-      border: 1px solid rgba(231, 67, 67, 0.9);
-      border-radius: 4px;
-      box-shadow: 0 13px 45px 2px rgba(233, 12, 12, 0.40);
+    li {
+      clear: both;
+      margin-top: 20px;
+    }
+
+    img {
+      width: 80px;
+      float: left;
+      margin-right: 10px;
+    }
+
+    strong {
+      font-size: 20px;
+    }
+
+    p {
+      margin: 5px 0;
     }
   </style>
+
+
 </head>
 
 <body>
-  <div id="app">
-    <ul class="ul">
+  <form action="" id="repo-form">
+    <input type="text" name="repository">
+    <button type="submit">Adicionar</button>
+  </form>
 
 
-    </ul>
+  <ul id="repo-list">
 
-    <input type="text" placeholder="Digite um To-Do"
-      class="inputText">
-    <button class="button">Adicionar</button>
-
-  </div>
+  </ul>
 
 
   <script src="bundle.js"></script>
