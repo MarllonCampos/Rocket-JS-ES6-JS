@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+    <title>Desafio 03</title>
+
+    <style>
+        code {
+            background-color: #eee;
+            border: 1px solid #999;
+            display: block;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Desafio 03 do AsyncAwait</h1>
+    <h3>Veja o <strong>CONSOLE</strong> do navegador</h3>
+    <h4>Exercício</h4>
+    <h5>Transforme os seguintes trechos de código utilizando
+        async/await:</h5>
+    <code>
+        class Github {<br>
+            &nbsp;&nbsp;static getRepositories(repo) {<br><br>
+                &nbsp;&nbsp;&nbsp;axios.get(`https://api.github.com/repos/${repo}`)<br>
+                &nbsp;&nbsp;&nbsp;.then(response => {
+            console.log(response.data);
+            })<br>
+            &nbsp;&nbsp;&nbsp;.catch(err => {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log('Repositório não existe');})<br>
+                &nbsp;&nbsp;}<br>
+           }<br>
+           Github.getRepositories('rocketseat/rocketseat.com.br');<br>
+           Github.getRepositories('rocketseat/dslkvmskv');
+    </code>
+
+
+
+
+    <script
+        src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

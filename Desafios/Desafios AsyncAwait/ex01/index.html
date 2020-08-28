@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+    <title>Desafio 01</title>
+
+    <style>
+        code {
+            background-color: #eee;
+            border: 1px solid #999;
+            display: block;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Desafio 01 do AsyncAwait</h1>
+    <h3>Veja o <strong>CONSOLE</strong> do navegador</h3>
+    <h4>Exercício</h4>
+    <h5>Transforme os seguintes trechos de código utilizando
+        async/await:</h5>
+    <code>
+        <strong>// Função delay aciona o .then após 1s </strong><br/>
+const delay = () => new Promise(resolve => setTimeout(resolve, 1000));<br/>
+function umPorSegundo() {<br/>
+ delay().then(() => {
+ console.log('1s');<br/>
+ delay().then(() => {
+ console.log('2s');<br/>
+ delay().then(() => {
+ console.log('3s');<br/>
+ &nbsp;&nbsp;&nbsp;&nbsp;});<br/>
+ &nbsp;&nbsp;&nbsp;})<br/>
+ &nbsp;&nbsp;});<br/>
+}
+umPorSegundo();
+    </code>
+
+
+    <script src="main.js"></script>
+</body>
+
+</html>
